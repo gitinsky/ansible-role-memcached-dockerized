@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/memcached -m 64 -p 11211 -u memcache
+/usr/bin/memcached -m $MEMORY_SIZE_IN_MB -p 11211 -u memcache
