@@ -3,13 +3,13 @@
   file: state=directory name=/root/memcached-dockerized
 
 - name: put Dockerfile
-  template: src=Dockerfile dest=/root/memcached-dockerized/Dockerfile
+  copy: src=Dockerfile dest=/root/memcached-dockerized/Dockerfile
 
 - name: put start.sh
   template: src=start.sh dest=/root/memcached-dockerized/start.sh mode=0755
 
 - name: build a Docker image for memcached
-  command: docker build -t gitinsky/memcached:0.1.1 --rm /root/memcached-dockerized
+  command: docker build -t gitinsky/memcached:0.1.2 --rm /root/memcached-dockerized
 
 - name: tag it as latest
   command: docker build -t gitinsky/memcached:latest --rm /root/memcached-dockerized
